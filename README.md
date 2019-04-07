@@ -4,4 +4,7 @@ _ANSiTerm2_ is a set of profiles, triggers and meticulous tweaks that turn [_iTe
 a fully fledged modern BBS client! Want to learn more? Check out the [wiki](https://github.com/watbulb/ANSiTerm2/wiki)!
 
 <br><br/>
+<img src="https://github.com/watbulb/ANSiTerm2/raw/master/.github/image/README.inline1.png" alt="d" width="600"/>
+<br><br/>
+
 _ANSiTerm2_ is a proud product of ArakNET's [Phenom Productions](https://www.phenomprod.com/) team.
