@@ -15,7 +15,7 @@ GIT_ARCHIVE   := "https://github.com/watbulb/ANSiTerm2/releases/download/$(VERSI
 FONTDIR       := ~/Library/Fonts
 PROFILEDIR    := ~/Library/Application\ Support/iTerm2/DynamicProfiles/
 
-SRC           := font profile trigger
+SRC           := doc font profile trigger
 OBJ           := ansiterm2.tar.gz
 
 

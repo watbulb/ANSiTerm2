@@ -8,7 +8,7 @@ class Ansiterm2 < Formula
     "
     homepage "https://www.phenomprod.com/"
     url      "https://github.com/watbulb/ANSiTerm2/releases/download/#{version}/ansiterm2.tar.gz"
-    version  "0.1a"
+    version  "0.1a-rc1"
     sha256   "024b507f811c3b0b80329a55e88c9765339c9a5d34d87fc8f7ac864ba79718b5"
     bottle   :unneeded
     
@@ -43,6 +43,7 @@ class Ansiterm2 < Formula
     	
         # install ANSiTerm2 to formula share
         share.mkpath
+        share.install "doc"
         share.install "font"
         share.install "trigger"
         share.install "profile"
