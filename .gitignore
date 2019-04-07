@@ -1,0 +1,14 @@
+## AAPL garbage
+.DS_Store
+
+## Output files
+*.tar.gz
+*.o
+
+## IDE/Workspace/Editor files
+*.swp
+TODO.md
+
+## Misc.
+demo/
+
