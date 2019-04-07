@@ -9,7 +9,7 @@ class Ansiterm2 < Formula
     homepage "https://www.phenomprod.com/"
     url      "https://github.com/watbulb/ANSiTerm2/releases/download/#{version}/ansiterm2.tar.gz"
     version  "0.1a-rc1"
-    sha256   "024b507f811c3b0b80329a55e88c9765339c9a5d34d87fc8f7ac864ba79718b5"
+    sha256   "7350c86fd03c5e893495147ad62cea20c7bab312495e925ea6bd2b5e7b401e0f"
     bottle   :unneeded
     
     # lrzsz is required for zmodem transfers
