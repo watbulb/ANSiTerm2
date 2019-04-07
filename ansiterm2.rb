@@ -43,7 +43,7 @@ class Ansiterm2 < Formula
     	
         # install ANSiTerm2 to formula share
         share.mkpath
-        share.install "doc"
+        share.install "docs"
         share.install "font"
         share.install "trigger"
         share.install "profile"
