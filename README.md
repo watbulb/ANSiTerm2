@@ -1,7 +1,7 @@
-# 📟 ANSiTerm2 (0.1a-rc1)
+# 📟 ANSiTerm2 (0.1a-rc2)
 
 _ANSiTerm2_ is a set of profiles, triggers and meticulous tweaks that turn [_iTerm2_](https://www.iterm2.com) into
-a fully fledged modern BBS client! Want to learn more? Check out the [wiki](https://github.com/watbulb/ANSiTerm2/wiki)!
+a fully fledged modern BBS client; modem support included! If you want to learn more, head over to the [wiki](https://github.com/watbulb/ANSiTerm2/wiki).
 
 <img src="https://github.com/watbulb/ANSiTerm2/raw/master/.github/image/README.inline1.png" alt="d" width="600"/>
 <br><br/>

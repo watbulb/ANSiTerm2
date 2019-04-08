@@ -23,7 +23,7 @@ OBJ           := ansiterm2.tar.gz
 ansiterm2.tar.gz:
 	tar -cjf $@ $(SRC)
 
-	
+
 # when installing locally we need to update the formula to point to local URL
 update_localurl:
 	sed -i '' -e 's_url.*\".*_url $(LOCAL_ARCHIVE)_g' $(LOCAL_FORMULA)
@@ -39,18 +39,15 @@ all: clean $(OBJ)
 
 
 test: ## test client functionality (execute from inside ANSiTerm2)
-test: all
 	@echo "[-] ERROR: Currently not implemented!"
 	@exit 1
 
 
 brewtest: ## test brew formula creation/installation
-brewtest: install
 	brew audit $(LOCAL_FORMULA)
 
 
 install: ## install ANSiTerm2 regularly (using git)
-install: all
 	@HOMEBREW_INSTALL_BADGE="📟" \
 	 HOMEBREW_NO_AUTO_UPDATE=1   \
 		brew install -s $(GIT_FORMULA)
