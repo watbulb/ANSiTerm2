@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<installer-gui-script minSpecVersion="1">
+    <pkg-ref id="sh.potato.ansiterm2.pkg">
+        <bundle-version/>
+    </pkg-ref>
+    <options customize="never" require-scripts="false"/>
+    <domains enable_localSystem="false" enable_anywhere="false" enable_currentUserHome="true"/>
+    <choices-outline>
+        <line choice="default">
+            <line choice="sh.potato.ansiterm2.pkg"/>
+        </line>
+    </choices-outline>
+    <choice id="default"/>
+    <choice id="sh.potato.ansiterm2.pkg" visible="true">
+        <pkg-ref id="sh.potato.ansiterm2.pkg"/>
+    </choice>
+    <pkg-ref id="sh.potato.ansiterm2.pkg" auth="none" version="0.1a-rc3" onConclusion="none" installKBytes="381">#stage1_ansiterm2.pkg</pkg-ref>
+    <title>ANSiTerm2</title>
+</installer-gui-script>

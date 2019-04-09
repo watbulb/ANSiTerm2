@@ -1,68 +1,37 @@
-class Ansiterm2 < Formula
-    desc "
-    ANSiTerm2 is a set of configurations, triggers and patches
-    that turn iTerm2 into a fully fledged modern BBS client, modem support included!
-    The last hope for a working and maintainable modern BBS client for macOS.
+cask 'ansiterm2' do
+    version '0.1a-rc3'
+    sha256 'deede8f364fa94119ee6bbd2953198bac90e3153c402e39a446f23baf620c425'
 
-    Author:   Dayton Pidhirney (watbulb)
-    "
-    homepage "https://www.phenomprod.com/"
-    version  "0.1a-rc2"
-    url "https://github.com/watbulb/ANSiTerm2/releases/download/0.1a-rc2/ansiterm2.tar.gz"
-    sha256 "77c03c5f1a3720e009ffb9dfe0884c954efbe46905742ddd8d6286fafbefa80f"
-    bottle   :unneeded
+    url "https://github.com/watbulb/ANSiTerm2/releases/download/#{version}/ansiterm2.pkg"
+    appcast 'https://github.com/watbulb/ANSiTerm2/releases.atom'
+    name 'ANSiTerm2'
+    homepage 'https://github.com/watbulb/ANSiTerm2'
+    
+    # mavericks or above is required for iTerm2
+    depends_on macos: '>= :mavericks'
 
-    # lrzsz is required for zmodem transfers
-    depends_on "lrzsz"
+    # ANSiTerm2 depends on the following for client modem functionality
+    depends_on formula:  'telnet'
+    depends_on formula:  'lrzsz'
 
-    # telnet is required for connecting to remote terminals
-    depends_on "telnet"
-
-    def install
-        # @XXX: rather poor way to check for Cask dependency
-        #       since brew doesn't support formulas which depend
-        #       on Casks, sadly...
-        system "/usr/local/bin/brew", "cask", "install", "iterm2"
-
-        # install Amiga fonts:
-        # @XXX: a Cask is required to write to ~/Library/Fonts
-        #       so for now we just prompt the user to install topaz
-        #       if it doesn't yet exist
-        username   = ENV["USER"]
-        fontprompt = false
-        if not(File.exist?("/Users/#{username}/Library/Fonts/TopazPlus_a1200_v1.0.ttf"))
-            system "open", "font/TopazPlus_a1200_v1.0.ttf"
-            fontprompt = true
-        end
-
-        # replace the dynamic_profile username in the ANSiTerm2 profile
-        profile = "profile/sh.potato.ansiterm2.plist"
-        IO.write(profile, File.open(profile) do |f|
-            f.read.gsub("replacement_user", username)
-        end)
-
-        # install ANSiTerm2 to formula share
-        share.mkpath
-        share.install "docs"
-        share.install "font"
-        share.install "trigger"
-        share.install "profile"
-
-        # prompt for font installation and iTerm2 configuration documentation
-        if(fontprompt)
-            puts
-            puts "A FontBook window should have appeared!"
-            puts "Please install the required Amiga font onto your system!"
-            puts '(simply click "Install Font" within the FontBook window)'
-        end
-
-        puts
-        puts "Please run the following command to 'activate' or 'update' ANSiTerm2:"
-        puts "cp #{share}/profile/* ~/Library/Application\\ Support/iTerm2/DynamicProfiles/"
-        puts
-        puts "ANSiTerm2 can be activated once iTerm2 is opened by pressing CTRL+CMD+0"
-        puts
+    # Some users install iTerm2 from it's website, so it won't show in installed Casks
+    if not(Dir.exist?("/Applications/iTerm.app"))
+        depends_on cask: 'iterm2'
     end
-end
+    
+    # install secure signed (Apple Developer) package installer
+    # note: this doesn't even need root, which makes it even more secure :)
+    installer script: {
+        executable: '/usr/sbin/installer',
+        args:       ['-pkg', 'ansiterm2.pkg', '-target', 'CurrentUserHomeDirectory']
+    }
+    
+    # remove pacakge by product-ids
+    # note: unfortunately since brew doesn't support uninstalling HOME based
+    #       packages, we have to rely on removing them manually, this is why brew is shit.
+    uninstall delete: [
+        '~/Library/Application Support/iTerm2/DynamicProfiles/sh.potato.ansiterm2.plist',
+        '~/.config/ansiterm2'
+    ]
 
-# vim: ts=4 sw=4 et
+end

@@ -16,6 +16,6 @@ elif [ ! "${FILE}" ]; then
     echo; echo; echo
 else
     cd "${FILE}" || :
-    /usr/local/bin/rz -E -e -b && sleep 1
+    /usr/local/bin/rz -q -E -e -b && sleep 1
     echo; echo; echo
 fi
