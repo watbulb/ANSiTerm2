@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# implode on error
+set -e
+
+# symlink the dynamic profile to the user config folder
+rm ~/Library/Application\ Support/iTerm2/DynamicProfiles/sh.potato.ansiterm2.plist
+ln -s ~/.config/ansiterm2/profile/sh.potato.ansiterm2.plist ~/Library/Application\ Support/iTerm2/DynamicProfiles/sh.potato.ansiterm2.plist
+
+# replace the dummy usernames in the profile with the real one
+sed -i '' -e "s/replacement_user/${USER}/g" ~/.config/ansiterm2/profile/sh.potato.ansiterm2.plist
+
+exit 0 # all went well :)
+

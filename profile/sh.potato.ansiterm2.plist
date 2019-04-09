@@ -321,13 +321,13 @@
   "Triggers" : [
     {
       "action" : "MuteCoprocessTrigger",
-      "parameter" : "\/usr\/local\/Cellar\/ansiterm2\/0.1a-rc2\/share\/trigger\/modem\/iterm2-recv-zmodem.sh",
+      "parameter" : "\/Users\/replacement_user\/.config\/ansiterm2\/trigger\/modem\/iterm2-recv-zmodem.sh",
       "regex" : "\\\\*\\\\*B00000000000000",
       "partial" : true
     },
     {
       "partial" : true,
-      "parameter" : "\/usr\/local\/Cellar\/ansiterm2\/0.1a-rc2\/share\/trigger\/modem\/iterm2-send-zmodem.sh",
+      "parameter" : "\/Users\/replacement_user\/.config\/ansiterm2\/trigger\/modem\/iterm2-send-zmodem.sh",
       "regex" : "\\\\*\\\\*B0100",
       "action" : "MuteCoprocessTrigger"
     },

@@ -2,8 +2,7 @@
 .DS_Store
 
 ## Output files
-*.tar.gz
-*.o
+*.pkg
 
 ## IDE/Workspace/Editor files
 *.swp

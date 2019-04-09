@@ -15,6 +15,6 @@ elif [ ! "${FILE}" ]; then
     print \\x18\\x18\\x18\\x18\\x18 && sleep 1
     echo; echo; echo
 else
-    /usr/local/bin/sz -E -e -b -8 "${FILE}" && sleep 1
+    /usr/local/bin/sz -q -E -e -b -8 "${FILE}" && sleep 1
     echo; echo; echo
 fi
