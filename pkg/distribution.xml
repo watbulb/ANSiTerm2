@@ -14,6 +14,6 @@
     <choice id="sh.potato.ansiterm2.pkg" visible="true">
         <pkg-ref id="sh.potato.ansiterm2.pkg"/>
     </choice>
-    <pkg-ref id="sh.potato.ansiterm2.pkg" auth="none" version="0.1a-rc3" onConclusion="none" installKBytes="381">#stage1_ansiterm2.pkg</pkg-ref>
+    <pkg-ref id="sh.potato.ansiterm2.pkg" auth="none" version="0.1b" onConclusion="none" installKBytes="381">#stage1_ansiterm2.pkg</pkg-ref>
     <title>ANSiTerm2</title>
 </installer-gui-script>

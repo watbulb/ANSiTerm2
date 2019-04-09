@@ -1,5 +1,5 @@
 cask 'ansiterm2' do
-    version '0.1a-rc3'
+    version '0.1b'
     sha256 'deede8f364fa94119ee6bbd2953198bac90e3153c402e39a446f23baf620c425'
 
     url "https://github.com/watbulb/ANSiTerm2/releases/download/#{version}/ansiterm2.pkg"
