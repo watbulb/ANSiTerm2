@@ -1,6 +1,6 @@
 cask 'ansiterm2' do
     version '0.1b'
-    sha256 'deede8f364fa94119ee6bbd2953198bac90e3153c402e39a446f23baf620c425'
+    sha256 '37c8d10fec7943a993b388843dbd1a132976bf5cc6d92a5d8df70822222e2184'
 
     url "https://github.com/watbulb/ANSiTerm2/releases/download/#{version}/ansiterm2.pkg"
     appcast 'https://github.com/watbulb/ANSiTerm2/releases.atom'
