@@ -23,7 +23,7 @@ cask 'ansiterm2' do
     # note: this doesn't even need root, which makes it even more secure :)
     installer script: {
         executable: '/usr/sbin/installer',
-        args:       ['-pkg', 'ansiterm2.pkg', '-target', 'CurrentUserHomeDirectory']
+        args:       ['-pkg', "#{staged_path}/ansiterm2.pkg", '-target', 'CurrentUserHomeDirectory']
     }
     
     # remove pacakge by product-ids
